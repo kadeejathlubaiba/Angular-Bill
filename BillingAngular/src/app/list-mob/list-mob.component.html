@@ -1,0 +1,36 @@
+
+<br>
+<br>
+<input type="text" [(ngModel)]="filter" class="form-control" placeholder="Search text Here" />
+<br>
+<br>
+<table class="table table-bordered table-striped" style="border: 5%;color: green;table-layout: auto;">
+    <thead>
+        <tr>
+            <th style="width:15%">Product code</th>
+            <th style="width:15%">Description</th>
+            <th style="width:15%">Quantity</th>
+            <th style="width:15%">RatePerUnit</th>
+            <th style="width:15%">Category Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products | filter:filter| paginate:{itemsPerPage:5,currentPage:page}">
+           <td>{{p.ProductCode}}</td>
+           <td>{{p.DescProduct}}</td>
+           <td>{{p.Qty}}</td>
+           <td>{{p.RatePerUnit}}</td>
+           <td>{{p.Category1}}</td>
+          <!--<td>
+            <button (click)="updproduct(p.ProductCode)" class="btn btn-sm btn-primary">Edit</button>
+            &nbsp; &nbsp;
+            <button class="btn btn-sm btn-danger" (click)="delete(item.Id)">Delete</button>
+        </td>-->
+        </tr>
+    </tbody>
+    <pagination-controls (pageChange)="page= $event"></pagination-controls>
+</table>
+
+
+
+

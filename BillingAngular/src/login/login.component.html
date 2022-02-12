@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="border">
+        <h3>Login</h3>
+        <hr>
+
+        <form [formGroup]="loginForm" (ngSubmit)="loginCredentials()">
+            <div>
+                <p>
+                    <input name="UserName" required minlength="5" class="form-control" 
+                    [ngClass]="{'is-invalid': formControls.UserName.touched && formControls.UserName.invalid}" type="text" formControlName="UserName" placeholder="userName">
+                </p>
+            </div>
+            <div *ngIf="isSubmitted && formControls.UserName.errors">
+                <div *ngIf="formControls.UserName.errors">
+                    <span style="color:red">
+                        UserName Required
+                    </span>
+                </div>
+            </div>
+            
+            <div>
+                <p>
+                    <input class="form-control" name="UserPassword" 
+                    [ngClass]="{'is-invalid': formControls.UserPassword.touched && formControls.UserPassword.invalid}" type="text" formControlName="UserPassword" placeholder="Password">
+                </p>
+            </div>
+            <div *ngIf="isSubmitted && formControls.UserPassword.errors">
+                <div *ngIf="formControls.UserPassword.errors">
+                    <span style="color: red;">
+                        Password Required
+                    </span>
+                </div>
+            </div>
+            <button class="btn btn-primary">Login</button>
+            
+            <div *ngIf="errors">
+                {{errors}}
+            </div>
+
+        </form>
+    </div>
+</div>

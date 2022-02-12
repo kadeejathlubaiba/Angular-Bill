@@ -1,0 +1,37 @@
+
+    <div class="container">
+         <h4 style="color: green;text-align: center;margin-top: 2%;"><strong>Welcome:{{loggedUser}}</strong></h4>
+    
+    <div class="row content">
+        <div class="col-sm-2 sidenav bg-success">
+            <p><a href="#" style="color: white;"> Dashboard </a></p>
+            <p><a href="#"style="color: white;">Billing</a></p>
+            <p><a href="#"style="color: white;"> User Management</a></p>
+            <p><a href="#"style="color: white;">Categories</a></p>
+            <p><a href="#"style="color: white;"> Product Management</a></p>
+            <p><a href="#"style="color: white;">Logout</a></p>
+        </div>
+
+        <div class="col">
+        <nav>
+       
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/product"style="color: green;"><strong>ADD PRODUCT</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/display" style="color: green;"><strong>LIST</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/list" style="color: green;"><strong>REPORTS</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" (click)="logOut()" style="color: green;"><strong>LOGOUT</strong></a>
+            </li>
+        </ul>
+        <ul>
+            <app-product></app-product>
+        </ul>
+    </nav>
+        </div>
+    </div>

@@ -1,0 +1,94 @@
+
+<!--template driven form-->
+<form name="productform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)" style="margin-top: 8%;margin-left: 3%;margin-right: 3%;">
+
+       <!--product code --hidden-->
+    <input type="hidden" name=" ProductCode" [(ngModel)]="productService.formData. ProductCode">
+    
+      <!--Description-->
+      <div class="form-group">
+        <label>Description: </label>
+        <input type="text" name="DescProduct"
+        #DescProduct="ngModel"
+        [(ngModel)]="productService.formData.DescProduct"
+        class="form-control"
+        placeholder="Enter Description"
+        required
+        minlength="2"
+        maxlength="50" 
+        [ngClass]="{'is-invalid': DescProduct.touched && DescProduct.invalid}" style="color: green;" >
+
+        <!--validation-->
+        <div class="validation-error" *ngIf="DescProduct.touched && DescProduct.invalid ">
+            <div *ngIf="DescProduct.errors.required">
+               Description is required
+            </div>
+        </div>
+
+    </div>
+        <!--Qty-->
+    <div class="form-group">
+        <label>Quantity: </label>
+        <input type="text" name="Qty"
+        #Qty="ngModel"
+        [(ngModel)]="productService.formData.Qty"
+        class="form-control"
+        placeholder="Enter Quantity"
+        required
+        [ngClass]="{'is-invalid': Qty.touched && Qty.invalid}" style="color: green;" >
+
+        <!--validation-->
+        <div class="validation-error" *ngIf="Qty.touched && Qty.invalid ">
+            <div *ngIf="Qty.errors.required">
+               Quantity is required
+            </div>
+        </div>
+
+    </div>
+
+    <!--RatePerUnit-->
+    <div class="form-group">
+        <label>RatePerUnit: </label>
+        <input type="text" name="RatePerUnit"
+        #RatePerUnit="ngModel"
+        [(ngModel)]="productService.formData.RatePerUnit"
+        class="form-control"
+        placeholder="Enter RatePerUnit"
+        required
+        minlength="1"
+        [ngClass]="{'is-invalid': RatePerUnit.touched && RatePerUnit.invalid}" style="color: green;">
+
+        <!--validation-->
+        <div class="validation-error" *ngIf="RatePerUnit.touched && RatePerUnit.invalid ">
+            <div *ngIf="RatePerUnit.errors.required">
+                RatePerUnit is required
+            </div>
+        </div>
+    </div>
+
+    <!--Cid-->
+    <div class="form-group">
+        <label>Category ID: </label>
+        <input type="text" name="Cid"
+        #Cid="ngModel"
+        [(ngModel)]="productService.formData.Cid"
+        class="form-control"
+        placeholder="Enter Category ID"
+        required
+        minlength="1"
+        [ngClass]="{'is-invalid': Cid.touched && Cid.invalid}" style="color: green;">
+
+        <!--validation-->
+        <div class="validation-error" *ngIf="Cid.touched && Cid.invalid ">
+            <div *ngIf="Cid.errors.required">
+                Category ID is required
+            </div>
+        </div>
+    </div>
+<br><br>
+
+     <!--submit-->
+     <button type="submit" class="btn btn-lg btn-success form-control" [disabled]="!(form.valid && form.dirty)">SUBMIT</button>
+
+    </form>
+

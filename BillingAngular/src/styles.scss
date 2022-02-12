@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    padding: 0;
+    margin: 0;
+}
+.form-group>input{
+    font-weight:bolder;
+}
+.form-group>select{
+    font-weight: bolder;
+}
+.form-group input :placeholder{
+    color: rgb(228,211,211)
+}
+table tbody tr:hover {
+    background-color: rgba($color: #a5a4a4, $alpha: 1.0);
+    cursor: pointer;
+}
+input.invalid{
+    border-color: red;
+}
+
+div.validation-error{
+    width:100%;
+    margin-top: .25em;
+    font-size: 80%;
+    color: #dd3535;
+}
+// body{
+//     margin: 0;
+//     padding: 0;
+//     //background-image: url("billing.jpeg");
+//     background-size: 100%;
+//     background-color: #070707;
+//     background-repeat: no-repeat;
+//     backdrop-filter: blur(5px);
+// }
